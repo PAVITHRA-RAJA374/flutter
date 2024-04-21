@@ -1,6 +1,6 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/widgets.dart';
 
 void main() {
   runApp(new MaterialApp(
@@ -13,6 +13,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  double _v = 0;
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -21,7 +22,7 @@ class _MyAppState extends State<MyApp> {
               print('Icon is clicked');
             },
             icon: Icon(Icons.menu)),
-        title: Text('text button'),
+        title: Text('icon button'),
         backgroundColor: Colors.blue,
         actions: [
           IconButton(
@@ -34,19 +35,26 @@ class _MyAppState extends State<MyApp> {
           ),
         ],
       ),
-      body: Center(
-        child: TextButton(
-          style: ButtonStyle(
-            foregroundColor: MaterialStatePropertyAll(Colors.white),
-            backgroundColor: MaterialStatePropertyAll(Colors.blueGrey),
-            overlayColor: MaterialStatePropertyAll(Colors.blue),
-            shape: MaterialStatePropertyAll(
-              RoundedRectangleBorder(borderRadius: BorderRadius.zero),
+      body: Column(
+        children: [
+          IconButton(
+            onPressed: () {
+              setState(() {
+                _v += 10;
+              });
+            },
+            icon: Icon(Icons.volume_up),
+            iconSize: 50,
+            color: Colors.red,
+            style: ButtonStyle(
+              overlayColor: MaterialStatePropertyAll(Colors.blue),
             ),
           ),
-          onPressed: () {},
-          child: Text('submit'),
-        ),
+          Text(
+            'vol : ${_v}',
+            style: TextStyle(fontSize: 20),
+          ),
+        ],
       ),
     );
   }

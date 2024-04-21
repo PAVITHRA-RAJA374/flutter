@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/widgets.dart';
 
 void main() {
   runApp(new MaterialApp(
@@ -16,12 +14,12 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(
+        /*leading: IconButton(
             onPressed: () {
               print('Icon is clicked');
             },
-            icon: Icon(Icons.menu)),
-        title: Text('text button'),
+            icon: Icon(Icons.menu)),*/
+        title: Text('raised button'),
         backgroundColor: Colors.blue,
         actions: [
           IconButton(
@@ -35,17 +33,19 @@ class _MyAppState extends State<MyApp> {
         ],
       ),
       body: Center(
-        child: TextButton(
-          style: ButtonStyle(
-            foregroundColor: MaterialStatePropertyAll(Colors.white),
-            backgroundColor: MaterialStatePropertyAll(Colors.blueGrey),
-            overlayColor: MaterialStatePropertyAll(Colors.blue),
-            shape: MaterialStatePropertyAll(
-              RoundedRectangleBorder(borderRadius: BorderRadius.zero),
-            ),
-          ),
+        child: ElevatedButton(
           onPressed: () {},
-          child: Text('submit'),
+          child: Text(
+            'print',
+            style: TextStyle(
+                fontStyle: FontStyle.italic, fontSize: 20, color: Colors.white),
+          ),
+          style: ButtonStyle(
+            backgroundColor:
+                MaterialStatePropertyAll(Color.fromARGB(255, 5, 119, 64)),
+            overlayColor:
+                MaterialStatePropertyAll(Color.fromARGB(255, 238, 41, 41)),
+          ),
         ),
       ),
     );
