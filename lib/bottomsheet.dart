@@ -18,10 +18,20 @@ class _MyAppState extends State<MyApp> {
         context: context,
         builder: (BuildContext context) {
           return Container(
+            padding: EdgeInsets.all(15),
             child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text('Are ypu sure to exit'),
-                TextButton(onPressed: (){}, child: ),
+                TextButton(
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  child: Text(
+                    'yes',
+                    style: TextStyle(color: Colors.red),
+                  ),
+                ),
               ],
             ),
           );
