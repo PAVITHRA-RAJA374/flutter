@@ -1,4 +1,4 @@
-import 'dart:async';
+import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
@@ -13,19 +13,6 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  Future showdialog(BuildContext context, String msg) async {
-    return showDialog(
-        context: context,
-        builder: (context) => new AlertDialog(
-              title: new Text(msg),
-              actions: [
-                TextButton(
-                    onPressed: () => Navigator.pop(context),
-                    child: new Text('OK'))
-              ],
-            ));
-  }
-
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -34,7 +21,7 @@ class _MyAppState extends State<MyApp> {
               print('Icon is clicked');
             },
             icon: Icon(Icons.menu)),*/
-        title: Text('alert dialog'),
+        title: Text('Custom Alert Dialog'),
         backgroundColor: Colors.blue,
         actions: [
           IconButton(
@@ -50,21 +37,58 @@ class _MyAppState extends State<MyApp> {
       body: Center(
         child: ElevatedButton(
           onPressed: () {
-            showdialog(context, 'are you sure to continue');
+            String title = "Message";
+            String msg = "Are you sure to submit";
+            showalertdialog(context, title, msg);
           },
           child: Text(
-            'print',
+            'Submit',
             style: TextStyle(
                 fontStyle: FontStyle.italic, fontSize: 20, color: Colors.white),
           ),
           style: ButtonStyle(
-            backgroundColor:
-                MaterialStatePropertyAll(Color.fromARGB(255, 5, 119, 64)),
+            backgroundColor: MaterialStatePropertyAll(Colors.blue),
             overlayColor:
                 MaterialStatePropertyAll(Color.fromARGB(255, 238, 41, 41)),
+            shape: MaterialStatePropertyAll(
+              RoundedRectangleBorder(borderRadius: BorderRadius.zero),
+            ),
           ),
         ),
       ),
     );
   }
+}
+
+showalertdialog(BuildContext context, String title, String msg) {
+  Widget okbtn = TextButton(
+    onPressed: () => Navigator.pop(context),
+    child: Text(
+      'Sure',
+      style: TextStyle(color: Color.fromARGB(255, 5, 119, 64)),
+    ),
+  );
+  Widget cancelbtn = TextButton(
+    onPressed: () => Navigator.pop(context),
+    child: Text(
+      'Cancel',
+      style: TextStyle(color: Colors.red),
+    ),
+  );
+  AlertDialog alert = AlertDialog(
+    title: Text(
+      title,
+      style: TextStyle(color: Color.fromARGB(255, 5, 119, 64)),
+    ),
+    content: Text(msg),
+    actions: [
+      okbtn,
+      cancelbtn,
+    ],
+  );
+  showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return alert;
+      });
 }
