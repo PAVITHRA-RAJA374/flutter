@@ -1,25 +1,27 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(new MaterialApp(
-    home: new MyApp(),
-  ));
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: FirstPage(),
+      title: 'title',
+      theme: ThemeData(primarySwatch: Colors.purple),
+      debugShowCheckedModeBanner: false,
+      home: MyHomePage(),
     );
   }
 }
 
-class FirstPage extends State<MyApp> {
+class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('app bar'),
-        backgroundColor: Colors.purple,
+        title: Text('custom Font'),
+        backgroundColor: Colors.deepPurple,
         actions: [
           IconButton(
             onPressed: () {},
@@ -30,6 +32,30 @@ class FirstPage extends State<MyApp> {
             icon: Icon(Icons.more_vert),
           ),
         ],
+      ),
+      body: Container(
+        width: double.infinity,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Text(
+              'நன்றி',
+              style: TextStyle(fontSize: 40, fontFamily: "Oi-Regular"),
+            ),
+            Text(
+              'Thank you',
+              style: TextStyle(fontSize: 40, fontFamily: "Oi-Regular"),
+            ),
+            Text(
+              'Hello',
+              style: TextStyle(fontSize: 40, fontFamily: "Oi-Regular"),
+            ),
+            Text(
+              'Bye',
+              style: TextStyle(fontSize: 40, fontFamily: "Jacquard24-Regular"),
+            ),
+          ],
+        ),
       ),
     );
   }
