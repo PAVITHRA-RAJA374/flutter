@@ -48,7 +48,7 @@ class MyHomePage extends StatelessWidget {
             ),
             Text(
               'Hello',
-              style: TextStyle(fontSize: 40, fontFamily: "Oi-Regular"),
+              style: TextStyle(fontSize: 40, fontFamily: "Jacquard24-Regular"),
             ),
             Text(
               'Bye',
