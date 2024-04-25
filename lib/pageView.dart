@@ -16,7 +16,7 @@ class _MyAppState extends State<MyApp> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Page view'),
-        backgroundColor: Colors.grey,
+        backgroundColor: Colors.purple,
         actions: [
           IconButton(
             onPressed: () {},
@@ -67,7 +67,7 @@ class _MyAppState extends State<MyApp> {
             ),
           ),
           Container(
-            color: Colors.purple,
+            color: Colors.pink,
             child: Center(
               child: Text(
                 'page 4',
