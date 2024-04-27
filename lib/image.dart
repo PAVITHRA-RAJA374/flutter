@@ -35,7 +35,7 @@ class _MyAppState extends State<MyApp> {
       body: Container(
         height: 150,
         width: double.infinity,
-        child: Image(image: AssetImage('favicon.png')),
+        child: Image(image: AssetImage('assets/images/xplorebg.png')),
       ),
     );
   }

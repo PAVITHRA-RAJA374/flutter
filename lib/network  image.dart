@@ -34,21 +34,25 @@ class _MyAppState extends State<MyApp> {
       ),
       body: Center(
         child: Container(
-          height: 100,
-          width: 100,
+          height: 200,
+          width: 200,
           decoration: BoxDecoration(
             border: Border.all(width: 2),
             borderRadius: BorderRadius.circular(10),
-            image: DecorationImage(
+            image: const DecorationImage(
               image: NetworkImage(
-                  'https://www.google.com/search?sca_esv=5bc86930ad7b2685&q=images&tbm=isch&source=lnms&prmd=ivsnmbtz&sa=X&ved=2ahUKEwi_mYyWkNOFAxXBSGcHHTOLCdQQ0pQJegQIERAB&biw=1366&bih=641&dpr=1#imgrc=niFX30xK9slyfM'),
+                  'https://images.pexels.com/photos/674010/pexels-photo-674010.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'),
               fit: BoxFit.cover,
             ),
           ),
-          child: Text('hello'),
+          child: Text(
+            'hello',
+            style: TextStyle(color: Colors.white, fontSize: 20),
+          ),
           /*child: Image.network(
-              'https://www.google.com/search?sca_esv=5bc86930ad7b2685&q=images&tbm=isch&source=lnms&prmd=ivsnmbtz&sa=X&ved=2ahUKEwi_mYyWkNOFAxXBSGcHHTOLCdQQ0pQJegQIERAB&biw=1366&bih=641&dpr=1#imgrc=niFX30xK9slyfM'),
-        ),*/
+            'https://images.pexels.com/photos/674010/pexels-photo-674010.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+            fit: BoxFit.fill,
+          ),*/
         ),
       ),
     );

@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 void main() {
   runApp(new MaterialApp(
@@ -12,6 +14,8 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  PageController page = PageController(initialPage: 0);
+  int pageIndex = 0;
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -19,16 +23,31 @@ class _MyAppState extends State<MyApp> {
         backgroundColor: Colors.purple,
         actions: [
           IconButton(
-            onPressed: () {},
-            icon: Icon(Icons.search),
+            onPressed: () {
+              page.animateToPage(--pageIndex,
+                  duration: Duration(
+                    milliseconds: 400,
+                  ),
+                  curve: Curves.linearToEaseOut);
+            },
+            icon: Icon(Icons.arrow_back),
           ),
           IconButton(
-            onPressed: () {},
-            icon: Icon(Icons.more_vert),
+            onPressed: () {
+              page.animateToPage(++pageIndex,
+                  duration: Duration(
+                    milliseconds: 400,
+                  ),
+                  curve: Curves.linearToEaseOut);
+            },
+            icon: Icon(Icons.arrow_forward),
           ),
         ],
       ),
       body: PageView(
+        controller: page,
+        scrollDirection: Axis.horizontal,
+        pageSnapping: true,
         children: [
           Container(
             color: Colors.teal,
