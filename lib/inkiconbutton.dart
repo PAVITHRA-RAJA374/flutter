@@ -1,16 +1,20 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(new MaterialApp(
-    home: new MyApp(),
+  runApp(const MaterialApp(
+    home: MyApp(),
   ));
 }
 
 class MyApp extends StatefulWidget {
+  const MyApp({super.key});
+
+  @override
   _MyAppState createState() => _MyAppState();
 }
 
 class _MyAppState extends State<MyApp> {
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -18,30 +22,30 @@ class _MyAppState extends State<MyApp> {
             onPressed: () {
               print('Icon is clicked');
             },
-            icon: Icon(Icons.menu)),
-        title: Text('ink icon button'),
+            icon: const Icon(Icons.menu)),
+        title: const Text('ink icon button'),
         backgroundColor: Colors.blue,
         actions: [
           IconButton(
             onPressed: () {},
-            icon: Icon(Icons.search),
+            icon: const Icon(Icons.search),
           ),
           IconButton(
             onPressed: () {},
-            icon: Icon(Icons.more_vert),
+            icon: const Icon(Icons.more_vert),
           ),
         ],
       ),
       body: Center(
         child: Ink(
-          decoration: ShapeDecoration(
+          decoration: const ShapeDecoration(
             color: Colors.red,
             shape: CircleBorder(),
           ),
           child: IconButton(
             onPressed: () {},
-            icon: Icon(Icons.mic),
-            style: ButtonStyle(
+            icon: const Icon(Icons.mic),
+            style: const ButtonStyle(
               overlayColor: MaterialStatePropertyAll(Colors.blue),
               foregroundColor: MaterialStatePropertyAll(Colors.white),
             ),

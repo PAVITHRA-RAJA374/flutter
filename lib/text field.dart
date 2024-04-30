@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(new MaterialApp(
-    home: new MyApp(),
+  runApp(const MaterialApp(
+    home: MyApp(),
   ));
 }
 
 class MyApp extends StatefulWidget {
+  const MyApp({super.key});
+
+  @override
   _MyAppState createState() => _MyAppState();
 }
 
@@ -25,6 +28,7 @@ class _MyAppState extends State<MyApp> {
     });
   }
 
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -33,16 +37,16 @@ class _MyAppState extends State<MyApp> {
               print('Icon is clicked');
             },
             icon: Icon(Icons.menu)),*/
-        title: Text('text field'),
+        title: const Text('text field'),
         backgroundColor: Colors.blue,
         actions: [
           IconButton(
             onPressed: () {},
-            icon: Icon(Icons.search),
+            icon: const Icon(Icons.search),
           ),
           IconButton(
             onPressed: () {},
-            icon: Icon(Icons.more_vert),
+            icon: const Icon(Icons.more_vert),
           ),
         ],
       ),
@@ -50,10 +54,10 @@ class _MyAppState extends State<MyApp> {
         children: [
           Text(_name),
           TextField(
-            decoration: new InputDecoration(
+            decoration: const InputDecoration(
               labelText: 'NAME',
               hintText: 'Enter your full name',
-              icon: new Icon(Icons.call),
+              icon: Icon(Icons.call),
             ),
             autocorrect: true,
             onChanged: _onChanged,
@@ -61,10 +65,10 @@ class _MyAppState extends State<MyApp> {
             keyboardType: TextInputType.text,
           ),
           TextField(
-            decoration: new InputDecoration(
+            decoration: const InputDecoration(
               labelText: 'MOBILE NO.',
               hintText: 'Enter your mobile number',
-              icon: new Icon(Icons.call),
+              icon: Icon(Icons.call),
             ),
             autocorrect: true,
             onChanged: _onChanged,

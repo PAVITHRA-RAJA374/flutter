@@ -1,16 +1,20 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(new MaterialApp(
-    home: new MyApp(),
+  runApp(const MaterialApp(
+    home: MyApp(),
   ));
 }
 
 class MyApp extends StatefulWidget {
+  const MyApp({super.key});
+
+  @override
   _MyAppState createState() => _MyAppState();
 }
 
 class _MyAppState extends State<MyApp> {
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -18,10 +22,10 @@ class _MyAppState extends State<MyApp> {
             onPressed: () {
               print('Icon is clicked');
             },
-            icon: Icon(Icons.menu)),
-        title: Text('button bar'),
+            icon: const Icon(Icons.menu)),
+        title: const Text('button bar'),
         backgroundColor: Colors.blue,
-        actions: [],
+        actions: const [],
       ),
       body: Container(
         child: ButtonBar(
@@ -29,29 +33,29 @@ class _MyAppState extends State<MyApp> {
           children: [
             IconButton(
               onPressed: () {},
-              icon: Icon(Icons.search),
+              icon: const Icon(Icons.search),
             ),
             IconButton(
               onPressed: () {},
-              icon: Icon(Icons.more_vert),
+              icon: const Icon(Icons.more_vert),
             ),
             IconButton(
               onPressed: () {},
-              icon: Icon(Icons.home),
+              icon: const Icon(Icons.home),
             ),
             IconButton(
               onPressed: () {},
-              icon: Icon(Icons.people),
+              icon: const Icon(Icons.people),
             ),
             TextButton(
               onPressed: () {},
-              child: Text('login/sign-up'),
-              style: ButtonStyle(
+              style: const ButtonStyle(
                 foregroundColor: MaterialStatePropertyAll(Colors.black),
                 backgroundColor: MaterialStatePropertyAll(
                     Color.fromARGB(255, 193, 217, 230)),
                 overlayColor: MaterialStatePropertyAll(Colors.blue),
               ),
+              child: const Text('login/sign-up'),
             ),
           ],
         ),

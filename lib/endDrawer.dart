@@ -1,16 +1,20 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(new MaterialApp(
-    home: new MyApp(),
+  runApp(const MaterialApp(
+    home: MyApp(),
   ));
 }
 
 class MyApp extends StatefulWidget {
+  const MyApp({super.key});
+
+  @override
   _MyAppState createState() => _MyAppState();
 }
 
 class _MyAppState extends State<MyApp> {
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -18,8 +22,8 @@ class _MyAppState extends State<MyApp> {
             onPressed: () {
               print('Icon is clicked');
             },
-            icon: Icon(Icons.menu)),
-        title: Text('app bar'),
+            icon: const Icon(Icons.menu)),
+        title: const Text('app bar'),
         backgroundColor: Colors.blue,
         /*actions: [
           IconButton(
@@ -32,7 +36,7 @@ class _MyAppState extends State<MyApp> {
           ),
         ],*/
       ),
-      endDrawer: Drawer(
+      endDrawer: const Drawer(
         elevation: 20,
         child: Column(
           children: [
@@ -81,7 +85,7 @@ class _MyAppState extends State<MyApp> {
           ],
         ),
       ),
-      backgroundColor: Color.fromARGB(255, 255, 206, 253),
+      backgroundColor: const Color.fromARGB(255, 255, 206, 253),
     );
   }
 }

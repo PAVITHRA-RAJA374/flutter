@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(new MaterialApp(
-    home: new MyApp(),
+  runApp(const MaterialApp(
+    home: MyApp(),
   ));
 }
 
 class MyApp extends StatefulWidget {
+  const MyApp({super.key});
+
+  @override
   _MyAppState createState() => _MyAppState();
 }
 
@@ -35,29 +38,30 @@ class _MyAppState extends State<MyApp> {
     });
   }
 
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Animated container'),
+        title: const Text('Animated container'),
         backgroundColor: Colors.purple,
         actions: [
           IconButton(
             onPressed: () {},
-            icon: Icon(Icons.search),
+            icon: const Icon(Icons.search),
           ),
           IconButton(
             onPressed: () {},
-            icon: Icon(Icons.more_vert),
+            icon: const Icon(Icons.more_vert),
           ),
         ],
       ),
       body: Container(
         alignment: Alignment.center,
-        padding: EdgeInsets.all(20),
+        padding: const EdgeInsets.all(20),
         child: Column(
           children: [
             AnimatedContainer(
-              duration: Duration(seconds: 1),
+              duration: const Duration(seconds: 1),
               curve: Curves.bounceIn,
               height: h,
               width: w,
@@ -74,54 +78,54 @@ class _MyAppState extends State<MyApp> {
               onPressed: () {
                 AnimatedFunction();
               },
-              child: Text(
+              style: const ButtonStyle(
+                backgroundColor:
+                    MaterialStatePropertyAll(Color.fromARGB(255, 5, 119, 64)),
+                overlayColor:
+                    MaterialStatePropertyAll(Color.fromARGB(255, 238, 41, 41)),
+              ),
+              child: const Text(
                 'print',
                 style: TextStyle(
                     fontStyle: FontStyle.italic,
                     fontSize: 15,
                     color: Colors.white),
               ),
-              style: ButtonStyle(
-                backgroundColor:
-                    MaterialStatePropertyAll(Color.fromARGB(255, 5, 119, 64)),
-                overlayColor:
-                    MaterialStatePropertyAll(Color.fromARGB(255, 238, 41, 41)),
-              ),
             ),
             ElevatedButton(
               onPressed: () {
                 Bordersize();
               },
-              child: Text(
+              style: const ButtonStyle(
+                backgroundColor:
+                    MaterialStatePropertyAll(Color.fromARGB(255, 5, 119, 64)),
+                overlayColor:
+                    MaterialStatePropertyAll(Color.fromARGB(255, 238, 41, 41)),
+              ),
+              child: const Text(
                 'bordersize',
                 style: TextStyle(
                     fontStyle: FontStyle.italic,
                     fontSize: 15,
                     color: Colors.white),
               ),
-              style: ButtonStyle(
-                backgroundColor:
-                    MaterialStatePropertyAll(Color.fromARGB(255, 5, 119, 64)),
-                overlayColor:
-                    MaterialStatePropertyAll(Color.fromARGB(255, 238, 41, 41)),
-              ),
             ),
             ElevatedButton(
               onPressed: () {
                 BorderRadius();
               },
-              child: Text(
+              style: const ButtonStyle(
+                backgroundColor:
+                    MaterialStatePropertyAll(Color.fromARGB(255, 5, 119, 64)),
+                overlayColor:
+                    MaterialStatePropertyAll(Color.fromARGB(255, 238, 41, 41)),
+              ),
+              child: const Text(
                 'borderradius',
                 style: TextStyle(
                     fontStyle: FontStyle.italic,
                     fontSize: 15,
                     color: Colors.white),
-              ),
-              style: ButtonStyle(
-                backgroundColor:
-                    MaterialStatePropertyAll(Color.fromARGB(255, 5, 119, 64)),
-                overlayColor:
-                    MaterialStatePropertyAll(Color.fromARGB(255, 238, 41, 41)),
               ),
             ),
           ],

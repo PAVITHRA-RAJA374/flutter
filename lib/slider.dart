@@ -1,21 +1,25 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(new MaterialApp(
-    home: new MyApp(),
+  runApp(const MaterialApp(
+    home: MyApp(),
   ));
 }
 
 class MyApp extends StatefulWidget {
+  const MyApp({super.key});
+
+  @override
   _MyAppState createState() => _MyAppState();
 }
 
 class _MyAppState extends State<MyApp> {
   double rate = 0;
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('slider'),
+        title: const Text('slider'),
         backgroundColor: Colors.blue,
         /*actions: [
           IconButton(
@@ -42,7 +46,7 @@ class _MyAppState extends State<MyApp> {
           label: "$rate",
           activeColor: Colors.blue,
           thumbColor: Colors.red,
-          overlayColor: MaterialStatePropertyAll(Colors.purple),
+          overlayColor: const MaterialStatePropertyAll(Colors.purple),
           inactiveColor: Colors.deepPurpleAccent,
         ),
       ),

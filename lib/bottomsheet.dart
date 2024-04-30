@@ -1,14 +1,16 @@
-import 'dart:ffi';
 
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(new MaterialApp(
-    home: new MyApp(),
+  runApp(const MaterialApp(
+    home: MyApp(),
   ));
 }
 
 class MyApp extends StatefulWidget {
+  const MyApp({super.key});
+
+  @override
   _MyAppState createState() => _MyAppState();
 }
 
@@ -18,16 +20,16 @@ class _MyAppState extends State<MyApp> {
         context: context,
         builder: (BuildContext context) {
           return Container(
-            padding: EdgeInsets.all(15),
+            padding: const EdgeInsets.all(15),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text('Are ypu sure to exit'),
+                const Text('Are ypu sure to exit'),
                 TextButton(
                   onPressed: () {
                     Navigator.pop(context);
                   },
-                  child: Text(
+                  child: const Text(
                     'yes',
                     style: TextStyle(color: Colors.red),
                   ),
@@ -38,6 +40,7 @@ class _MyAppState extends State<MyApp> {
         });
   }
 
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -46,28 +49,28 @@ class _MyAppState extends State<MyApp> {
               print('Icon is clicked');
             },
             icon: Icon(Icons.menu)),*/
-        title: Text('bottomsheet'),
+        title: const Text('bottomsheet'),
         backgroundColor: Colors.blue,
         actions: [
           IconButton(
             onPressed: () {},
-            icon: Icon(Icons.search),
+            icon: const Icon(Icons.search),
           ),
           IconButton(
             onPressed: () {},
-            icon: Icon(Icons.more_vert),
+            icon: const Icon(Icons.more_vert),
           ),
         ],
       ),
       body: Center(
         child: ElevatedButton(
           onPressed: showBottom,
-          style: ButtonStyle(
+          style: const ButtonStyle(
             backgroundColor: MaterialStatePropertyAll(Colors.blue),
             overlayColor: MaterialStatePropertyAll(Colors.red),
             foregroundColor: MaterialStatePropertyAll(Colors.white),
           ),
-          child: Text(
+          child: const Text(
             'exit',
             style: TextStyle(fontWeight: FontWeight.bold),
           ),

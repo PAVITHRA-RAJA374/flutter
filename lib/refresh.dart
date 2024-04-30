@@ -4,20 +4,23 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(new MaterialApp(
-    home: new MyApp(),
+  runApp(const MaterialApp(
+    home: MyApp(),
     debugShowCheckedModeBanner: false,
   ));
 }
 
 class MyApp extends StatefulWidget {
+  const MyApp({super.key});
+
+  @override
   _MyAppState createState() => _MyAppState();
 }
 
 class _MyAppState extends State<MyApp> {
   List<int> data = [];
   Future loadList() async {
-    await Future.delayed(Duration(milliseconds: 500));
+    await Future.delayed(const Duration(milliseconds: 500));
     final random = Random();
     final data = List.generate(20, (index) => random.nextInt(100));
     setState(() {
@@ -32,6 +35,7 @@ class _MyAppState extends State<MyApp> {
     super.initState();
   }
 
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -39,17 +43,17 @@ class _MyAppState extends State<MyApp> {
             onPressed: () {
               print('Icon is clicked');
             },
-            icon: Icon(Icons.menu)),
-        title: Text('refresh indiacator'),
+            icon: const Icon(Icons.menu)),
+        title: const Text('refresh indiacator'),
         backgroundColor: Colors.purple,
         actions: [
           IconButton(
             onPressed: () {},
-            icon: Icon(Icons.search),
+            icon: const Icon(Icons.search),
           ),
           IconButton(
             onPressed: () {},
-            icon: Icon(Icons.more_vert),
+            icon: const Icon(Icons.more_vert),
           ),
         ],
       ),
@@ -72,7 +76,7 @@ class _MyAppState extends State<MyApp> {
                     Text(
                       data[index].toString(),
                       style:
-                          TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+                          const TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
                     ),
                   ],
                 ));

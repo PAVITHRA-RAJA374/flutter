@@ -1,44 +1,48 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(new MaterialApp(
-    home: new MyApp(),
+  runApp(const MaterialApp(
+    home: MyApp(),
   ));
 }
 
 class MyApp extends StatefulWidget {
+  const MyApp({super.key});
+
+  @override
   _MyAppState createState() => _MyAppState();
 }
 
 class _MyAppState extends State<MyApp> {
   int i = 0;
   final tabs = [
-    Center(
+    const Center(
       child: Text('home'),
     ),
-    Center(
+    const Center(
       child: Text('search'),
     ),
-    Center(
+    const Center(
       child: Text('profile'),
     ),
-    Center(
+    const Center(
       child: Text('camera'),
     ),
   ];
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('bottom Navigation bar'),
+        title: const Text('bottom Navigation bar'),
         backgroundColor: Colors.purple,
         actions: [
           IconButton(
             onPressed: () {},
-            icon: Icon(Icons.search),
+            icon: const Icon(Icons.search),
           ),
           IconButton(
             onPressed: () {},
-            icon: Icon(Icons.more_vert),
+            icon: const Icon(Icons.more_vert),
           ),
         ],
       ),
@@ -63,9 +67,9 @@ class _MyAppState extends State<MyApp> {
               backgroundColor: Colors.purple,
               label: 'Camera'),
         ],
-        onTap: (current_index) {
+        onTap: (currentIndex) {
           setState(() {
-            i = current_index;
+            i = currentIndex;
           });
         },
       ),

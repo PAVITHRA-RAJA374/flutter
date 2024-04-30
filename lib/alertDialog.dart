@@ -3,12 +3,15 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(new MaterialApp(
-    home: new MyApp(),
+  runApp(const MaterialApp(
+    home: MyApp(),
   ));
 }
 
 class MyApp extends StatefulWidget {
+  const MyApp({super.key});
+
+  @override
   _MyAppState createState() => _MyAppState();
 }
 
@@ -16,16 +19,17 @@ class _MyAppState extends State<MyApp> {
   Future showdialog(BuildContext context, String msg) async {
     return showDialog(
         context: context,
-        builder: (context) => new AlertDialog(
-              title: new Text(msg),
+        builder: (context) => AlertDialog(
+              title: Text(msg),
               actions: [
                 TextButton(
                     onPressed: () => Navigator.pop(context),
-                    child: new Text('OK'))
+                    child: const Text('OK'))
               ],
             ));
   }
 
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -34,16 +38,16 @@ class _MyAppState extends State<MyApp> {
               print('Icon is clicked');
             },
             icon: Icon(Icons.menu)),*/
-        title: Text('alert dialog'),
+        title: const Text('alert dialog'),
         backgroundColor: Colors.blue,
         actions: [
           IconButton(
             onPressed: () {},
-            icon: Icon(Icons.search),
+            icon: const Icon(Icons.search),
           ),
           IconButton(
             onPressed: () {},
-            icon: Icon(Icons.more_vert),
+            icon: const Icon(Icons.more_vert),
           ),
         ],
       ),
@@ -52,16 +56,16 @@ class _MyAppState extends State<MyApp> {
           onPressed: () {
             showdialog(context, 'are you sure to continue');
           },
-          child: Text(
-            'print',
-            style: TextStyle(
-                fontStyle: FontStyle.italic, fontSize: 20, color: Colors.white),
-          ),
-          style: ButtonStyle(
+          style: const ButtonStyle(
             backgroundColor:
                 MaterialStatePropertyAll(Color.fromARGB(255, 5, 119, 64)),
             overlayColor:
                 MaterialStatePropertyAll(Color.fromARGB(255, 238, 41, 41)),
+          ),
+          child: const Text(
+            'print',
+            style: TextStyle(
+                fontStyle: FontStyle.italic, fontSize: 20, color: Colors.white),
           ),
         ),
       ),

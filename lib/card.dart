@@ -1,16 +1,20 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(new MaterialApp(
-    home: new MyApp(),
+  runApp(const MaterialApp(
+    home: MyApp(),
   ));
 }
 
 class MyApp extends StatefulWidget {
+  const MyApp({super.key});
+
+  @override
   _MyAppState createState() => _MyAppState();
 }
 
 class _MyAppState extends State<MyApp> {
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -19,32 +23,32 @@ class _MyAppState extends State<MyApp> {
               print('Icon is clicked');
             },
             icon: Icon(Icons.menu)),*/
-        title: Text('card'),
+        title: const Text('card'),
         backgroundColor: Colors.blue,
         actions: [
           IconButton(
             onPressed: () {},
-            icon: Icon(Icons.search),
+            icon: const Icon(Icons.search),
           ),
           IconButton(
             onPressed: () {},
-            icon: Icon(Icons.more_vert),
+            icon: const Icon(Icons.more_vert),
           ),
         ],
       ),
       body: Center(
         child: Card(
-          color: Color.fromARGB(255, 243, 35, 35),
+          color: const Color.fromARGB(255, 243, 35, 35),
           elevation: 10,
-          shadowColor: Color.fromARGB(255, 12, 16, 230),
+          shadowColor: const Color.fromARGB(255, 12, 16, 230),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(20),
           ),
           child: Container(
             height: 100,
             width: 300,
-            padding: EdgeInsets.all(20),
-            child: Column(
+            padding: const EdgeInsets.all(20),
+            child: const Column(
               children: [
                 Text(
                   'Mobile app with flutter',

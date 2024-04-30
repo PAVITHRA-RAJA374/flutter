@@ -1,16 +1,20 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(new MaterialApp(
-    home: new MyApp(),
+  runApp(const MaterialApp(
+    home: MyApp(),
   ));
 }
 
 class MyApp extends StatefulWidget {
+  const MyApp({super.key});
+
+  @override
   _MyAppState createState() => _MyAppState();
 }
 
 class _MyAppState extends State<MyApp> {
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -18,17 +22,17 @@ class _MyAppState extends State<MyApp> {
             onPressed: () {
               print('Icon is clicked');
             },
-            icon: Icon(Icons.menu)),
-        title: Text('row and column'),
+            icon: const Icon(Icons.menu)),
+        title: const Text('row and column'),
         backgroundColor: Colors.blue,
         actions: [
           IconButton(
             onPressed: () {},
-            icon: Icon(Icons.search),
+            icon: const Icon(Icons.search),
           ),
           IconButton(
             onPressed: () {},
-            icon: Icon(Icons.more_vert),
+            icon: const Icon(Icons.more_vert),
           ),
         ],
       ),
@@ -41,14 +45,14 @@ class _MyAppState extends State<MyApp> {
               width: 50,
               color: Colors.red,
             ),
-            Text('hello'),
+            const Text('hello'),
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Container(
                   height: 50,
                   width: 50,
-                  color: Color.fromARGB(255, 8, 24, 248),
+                  color: const Color.fromARGB(255, 8, 24, 248),
                 ),
                 Container(
                   height: 50,
@@ -58,7 +62,7 @@ class _MyAppState extends State<MyApp> {
                 Container(
                   height: 50,
                   width: 50,
-                  color: Color.fromARGB(255, 7, 133, 80),
+                  color: const Color.fromARGB(255, 7, 133, 80),
                 ),
               ],
             ),

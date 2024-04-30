@@ -1,16 +1,20 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(new MaterialApp(
-    home: new MyApp(),
+  runApp(const MaterialApp(
+    home: MyApp(),
   ));
 }
 
 class MyApp extends StatefulWidget {
+  const MyApp({super.key});
+
+  @override
   _MyAppState createState() => _MyAppState();
 }
 
 class _MyAppState extends State<MyApp> {
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -18,21 +22,21 @@ class _MyAppState extends State<MyApp> {
             onPressed: () {
               print('Icon is clicked');
             },
-            icon: Icon(Icons.menu)),
-        title: Text('column widget'),
+            icon: const Icon(Icons.menu)),
+        title: const Text('column widget'),
         backgroundColor: Colors.blue,
         actions: [
           IconButton(
             onPressed: () {},
-            icon: Icon(Icons.search),
+            icon: const Icon(Icons.search),
           ),
           IconButton(
             onPressed: () {},
-            icon: Icon(Icons.more_vert),
+            icon: const Icon(Icons.more_vert),
           ),
         ],
       ),
-      body: Container(
+      body: SizedBox(
         height: 1000,
         width: double.infinity,
         child: Column(
@@ -40,11 +44,11 @@ class _MyAppState extends State<MyApp> {
           crossAxisAlignment: CrossAxisAlignment.end,
           textBaseline: TextBaseline.alphabetic,
           children: [
-            Text(
+            const Text(
               'first ',
               style: TextStyle(fontSize: 30),
             ),
-            Text(
+            const Text(
               'second ',
             ),
             Container(

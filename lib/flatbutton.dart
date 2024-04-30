@@ -1,18 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/widgets.dart';
 
 void main() {
-  runApp(new MaterialApp(
-    home: new MyApp(),
+  runApp(const MaterialApp(
+    home: MyApp(),
   ));
 }
 
 class MyApp extends StatefulWidget {
+  const MyApp({super.key});
+
+  @override
   _MyAppState createState() => _MyAppState();
 }
 
 class _MyAppState extends State<MyApp> {
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -20,23 +22,23 @@ class _MyAppState extends State<MyApp> {
             onPressed: () {
               print('Icon is clicked');
             },
-            icon: Icon(Icons.menu)),
-        title: Text('text button'),
+            icon: const Icon(Icons.menu)),
+        title: const Text('text button'),
         backgroundColor: Colors.blue,
         actions: [
           IconButton(
             onPressed: () {},
-            icon: Icon(Icons.search),
+            icon: const Icon(Icons.search),
           ),
           IconButton(
             onPressed: () {},
-            icon: Icon(Icons.more_vert),
+            icon: const Icon(Icons.more_vert),
           ),
         ],
       ),
       body: Center(
         child: TextButton(
-          style: ButtonStyle(
+          style: const ButtonStyle(
             foregroundColor: MaterialStatePropertyAll(Colors.white),
             backgroundColor: MaterialStatePropertyAll(Colors.blueGrey),
             overlayColor: MaterialStatePropertyAll(Colors.blue),
@@ -45,7 +47,7 @@ class _MyAppState extends State<MyApp> {
             ),
           ),
           onPressed: () {},
-          child: Text('submit'),
+          child: const Text('submit'),
         ),
       ),
     );

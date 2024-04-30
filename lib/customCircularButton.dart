@@ -1,16 +1,20 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(new MaterialApp(
-    home: new MyApp(),
+  runApp(const MaterialApp(
+    home: MyApp(),
   ));
 }
 
 class MyApp extends StatefulWidget {
+  const MyApp({super.key});
+
+  @override
   _MyAppState createState() => _MyAppState();
 }
 
 class _MyAppState extends State<MyApp> {
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -19,16 +23,16 @@ class _MyAppState extends State<MyApp> {
               print('Icon is clicked');
             },
             icon: Icon(Icons.menu)),*/
-        title: Text('custom circular button'),
+        title: const Text('custom circular button'),
         backgroundColor: Colors.blue,
         actions: [
           IconButton(
             onPressed: () {},
-            icon: Icon(Icons.search),
+            icon: const Icon(Icons.search),
           ),
           IconButton(
             onPressed: () {},
-            icon: Icon(Icons.more_vert),
+            icon: const Icon(Icons.more_vert),
           ),
         ],
       ),
@@ -39,7 +43,7 @@ class _MyAppState extends State<MyApp> {
               w: 60,
               h: 60,
               c: Colors.red,
-              i: Icon(Icons.add, color: Colors.white),
+              i: const Icon(Icons.add, color: Colors.white),
               onClick: () {
                 print('Button clicked');
               },
@@ -48,7 +52,7 @@ class _MyAppState extends State<MyApp> {
               w: 60,
               h: 60,
               c: Colors.red,
-              i: Icon(Icons.login, color: Colors.white),
+              i: const Icon(Icons.login, color: Colors.white),
               onClick: () {
                 print('Button clicked');
               },
@@ -74,6 +78,7 @@ class circularbutton extends StatelessWidget {
       required this.c,
       required this.i,
       required this.onClick});
+  @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(color: c, shape: BoxShape.circle),

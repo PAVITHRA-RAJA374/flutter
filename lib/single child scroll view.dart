@@ -1,16 +1,20 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(new MaterialApp(
-    home: new MyApp(),
+  runApp(const MaterialApp(
+    home: MyApp(),
   ));
 }
 
 class MyApp extends StatefulWidget {
+  const MyApp({super.key});
+
+  @override
   _MyAppState createState() => _MyAppState();
 }
 
 class _MyAppState extends State<MyApp> {
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -19,16 +23,16 @@ class _MyAppState extends State<MyApp> {
               print('Icon is clicked');
             },
             icon: Icon(Icons.menu)),*/
-        title: Text('single child scroll view'),
+        title: const Text('single child scroll view'),
         backgroundColor: Colors.blue,
         actions: [
           IconButton(
             onPressed: () {},
-            icon: Icon(Icons.search),
+            icon: const Icon(Icons.search),
           ),
           IconButton(
             onPressed: () {},
-            icon: Icon(Icons.more_vert),
+            icon: const Icon(Icons.more_vert),
           ),
         ],
       ),
@@ -39,28 +43,28 @@ class _MyAppState extends State<MyApp> {
               height: 200,
               color: Colors.red,
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Container(
               height: 200,
               color: Colors.blue,
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Container(
               height: 200,
               color: Colors.yellow,
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Container(
               height: 200,
               color: Colors.purple,
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             SingleChildScrollView(
@@ -73,7 +77,7 @@ class _MyAppState extends State<MyApp> {
                       width: 100,
                       color: Colors.blue,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 10,
                     ),
                     Container(
@@ -81,7 +85,7 @@ class _MyAppState extends State<MyApp> {
                       width: 150,
                       color: Colors.red,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 10,
                     ),
                     Container(
@@ -89,7 +93,7 @@ class _MyAppState extends State<MyApp> {
                       width: 150,
                       color: Colors.purple,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 10,
                     ),
                     Container(
@@ -97,7 +101,7 @@ class _MyAppState extends State<MyApp> {
                       width: 150,
                       color: Colors.orange,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 10,
                     ),
                   ],

@@ -1,20 +1,26 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(new MaterialApp(
-    home: new MyApp(),
+  runApp(const MaterialApp(
+    home: MyApp(),
   ));
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       home: FirstPage(),
     );
   }
 }
 
 class FirstPage extends StatelessWidget {
+  const FirstPage({super.key});
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -23,20 +29,20 @@ class FirstPage extends StatelessWidget {
               print('Icon is clicked');
             },
             icon: Icon(Icons.menu)),*/
-        title: Text('screenNavigation'),
+        title: const Text('screenNavigation'),
         backgroundColor: Colors.purple,
         actions: [
           IconButton(
             onPressed: () {},
-            icon: Icon(Icons.search),
+            icon: const Icon(Icons.search),
           ),
           IconButton(
             onPressed: () {},
-            icon: Icon(Icons.more_vert),
+            icon: const Icon(Icons.more_vert),
           ),
         ],
       ),
-      body: Center(
+      body: const Center(
         child: Text(
           'page 1',
           style: TextStyle(
@@ -46,10 +52,10 @@ class FirstPage extends StatelessWidget {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.navigate_next),
+        child: const Icon(Icons.navigate_next),
         onPressed: () {
           Navigator.of(context)
-              .push(MaterialPageRoute(builder: (context) => SecondPage()));
+              .push(MaterialPageRoute(builder: (context) => const SecondPage()));
         },
       ),
     );
@@ -57,6 +63,9 @@ class FirstPage extends StatelessWidget {
 }
 
 class SecondPage extends StatelessWidget {
+  const SecondPage({super.key});
+
+  @override
   Widget build(BuildContext context) {
     return Container(
       child: Scaffold(
@@ -66,20 +75,20 @@ class SecondPage extends StatelessWidget {
               print('Icon is clicked');
             },
             icon: Icon(Icons.menu)),*/
-          title: Text('screenNavigation'),
+          title: const Text('screenNavigation'),
           backgroundColor: Colors.purple,
           actions: [
             IconButton(
               onPressed: () {},
-              icon: Icon(Icons.search),
+              icon: const Icon(Icons.search),
             ),
             IconButton(
               onPressed: () {},
-              icon: Icon(Icons.more_vert),
+              icon: const Icon(Icons.more_vert),
             ),
           ],
         ),
-        body: Center(
+        body: const Center(
           child: Text(
             'page 2',
             style: TextStyle(
@@ -89,10 +98,10 @@ class SecondPage extends StatelessWidget {
           ),
         ),
         floatingActionButton: FloatingActionButton(
-          child: Icon(Icons.navigate_before),
+          child: const Icon(Icons.navigate_before),
           onPressed: () {
             Navigator.of(context)
-                .pop(MaterialPageRoute(builder: (context) => SecondPage()));
+                .pop(MaterialPageRoute(builder: (context) => const SecondPage()));
           },
         ),
       ),

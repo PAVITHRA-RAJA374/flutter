@@ -1,46 +1,48 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 void main() {
-  runApp(new MaterialApp(
-    home: new MyApp(),
+  runApp(const MaterialApp(
+    home: MyApp(),
     debugShowCheckedModeBanner: false,
   ));
 }
 
 class MyApp extends StatefulWidget {
+  const MyApp({super.key});
+
+  @override
   _MyAppState createState() => _MyAppState();
 }
 
 class _MyAppState extends State<MyApp> {
   PageController page = PageController(initialPage: 0);
   int pageIndex = 0;
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Page view'),
+        title: const Text('Page view'),
         backgroundColor: Colors.purple,
         actions: [
           IconButton(
             onPressed: () {
               page.animateToPage(--pageIndex,
-                  duration: Duration(
+                  duration: const Duration(
                     milliseconds: 400,
                   ),
                   curve: Curves.linearToEaseOut);
             },
-            icon: Icon(Icons.arrow_back),
+            icon: const Icon(Icons.arrow_back),
           ),
           IconButton(
             onPressed: () {
               page.animateToPage(++pageIndex,
-                  duration: Duration(
+                  duration: const Duration(
                     milliseconds: 400,
                   ),
                   curve: Curves.linearToEaseOut);
             },
-            icon: Icon(Icons.arrow_forward),
+            icon: const Icon(Icons.arrow_forward),
           ),
         ],
       ),
@@ -51,7 +53,7 @@ class _MyAppState extends State<MyApp> {
         children: [
           Container(
             color: Colors.teal,
-            child: Center(
+            child: const Center(
               child: Text(
                 'page 1',
                 style: TextStyle(
@@ -63,7 +65,7 @@ class _MyAppState extends State<MyApp> {
           ),
           Container(
             color: Colors.redAccent,
-            child: Center(
+            child: const Center(
               child: Text(
                 'page 2',
                 style: TextStyle(
@@ -75,7 +77,7 @@ class _MyAppState extends State<MyApp> {
           ),
           Container(
             color: Colors.blue,
-            child: Center(
+            child: const Center(
               child: Text(
                 'page 3',
                 style: TextStyle(
@@ -87,7 +89,7 @@ class _MyAppState extends State<MyApp> {
           ),
           Container(
             color: Colors.pink,
-            child: Center(
+            child: const Center(
               child: Text(
                 'page 4',
                 style: TextStyle(
