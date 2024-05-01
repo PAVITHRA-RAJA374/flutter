@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 void main() {
@@ -24,7 +23,7 @@ class _MyAppState extends State<MyApp> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const Text('Are ypu sure to exit'),
+                const Text('Are you sure to exit'),
                 TextButton(
                   onPressed: () {
                     Navigator.pop(context);
