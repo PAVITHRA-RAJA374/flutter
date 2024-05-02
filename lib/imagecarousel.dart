@@ -3,31 +3,19 @@ import 'package:another_carousel_pro/another_carousel_pro.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  runApp(const MyApp());
+  runApp(const MaterialApp(
+    home: MyApp(),
+    debugShowCheckedModeBanner: false,
+  ));
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.purple,
-      ),
-      debugShowCheckedModeBanner: false,
-      home: const MyApp(),
-    );
-  }
+  State<MyApp> createState() => _MyAppState();
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key});
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
+class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -47,9 +35,9 @@ class _MyHomePageState extends State<MyHomePage> {
               dotSpacing: 20,
               images: const [
                 AssetImage('assets/images/1.jpg'),
-                AssetImage('assets/images/1.jpg'),
-                AssetImage('assets/images/1.jpg'),
-                AssetImage('assets/images/1.jpg'),
+                AssetImage('assets/images/2.png'),
+                AssetImage('assets/images/3.png'),
+                AssetImage('assets/images/4.png'),
               ]),
         ),
       ),
