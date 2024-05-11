@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_custom_cards/flutter_custom_cards.dart';
 import 'package:flutter_material_design_icons/flutter_material_design_icons.dart'
     show MdiIcons;
 import 'dart:async';
 import 'dart:convert';
-import 'package:flutter_custom_cards/flutter_custom_cards.dart';
 
 void main() {
   runApp(const MaterialApp(
@@ -184,64 +184,43 @@ class _ChatListState extends State<ChatList> {
     return ListView.builder(
       itemCount: _items.length,
       itemBuilder: (context, index) {
-        return ListTile(
-          leading: const CircleAvatar(
-            radius: 25,
-            backgroundImage: AssetImage('assets/images/profile.jpg'),
-            backgroundColor: Color(0xffCFD6DC),
-          ),
-          title: Text(
-            _items[index]["name"] ?? "",
-            style: const TextStyle(
-              fontSize: 17,
-              color: Colors.black,
+        return TextButton(
+          onPressed: () {},
+          style: ButtonStyle(
+            overlayColor: MaterialStatePropertyAll(
+              Color.fromARGB(255, 241, 239, 239),
             ),
           ),
-          subtitle: Text(
-            _items[index]["msg"] ?? "",
-            style: const TextStyle(
-              fontSize: 15,
-              color: Colors.grey,
+          child: ListTile(
+            leading: const CircleAvatar(
+              radius: 25,
+              backgroundImage: AssetImage('assets/images/profile.jpg'),
+              backgroundColor: Color(0xffCFD6DC),
             ),
-          ),
-          trailing: Text(
-            _items[index]["time"] ?? "",
-            style: const TextStyle(
-              fontSize: 12,
-              color: Colors.grey,
+            title: Text(
+              _items[index]["name"] ?? "",
+              style: const TextStyle(
+                fontSize: 17,
+                color: Colors.black,
+              ),
+            ),
+            subtitle: Text(
+              _items[index]["msg"] ?? "",
+              style: const TextStyle(
+                fontSize: 15,
+                color: Colors.grey,
+              ),
+            ),
+            trailing: Text(
+              _items[index]["time"] ?? "",
+              style: const TextStyle(
+                fontSize: 12,
+                color: Colors.grey,
+              ),
             ),
           ),
         );
       },
-    );
-  }
-}
-
-class LinkButton extends StatelessWidget {
-  final double w;
-  final double h;
-  final Color c;
-  //final VoidCallback onClick;
-
-  const LinkButton({
-    super.key,
-    required this.w,
-    required this.h,
-    required this.c,
-    //required this.onClick
-  });
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(color: c, shape: BoxShape.circle),
-      width: w,
-      height: h,
-      child: IconButton(
-          onPressed: /* onClick */ () {},
-          icon: const Icon(
-            Icons.link,
-            color: Colors.white,
-          )),
     );
   }
 }
@@ -809,14 +788,16 @@ class _CallListState extends State<CallList> {
   @override
   Widget build(BuildContext context) {
     return ListView(
-      children: const [
+      children: [
         ListTile(
-          leading: LinkButton(
-            w: 60,
-            h: 60,
-            c: Colors.green,
+          leading: Ink(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(50),
+              color: Color(0xff1DAB61),
+            ),
+            child: IconButton(onPressed: () {}, icon: Icon(MdiIcons.link)),
           ),
-          title: Text("Create call link"),
+          title: const Text("Create call link"),
           subtitle: Text(
             "Share a link for your WhatsApp call",
             style: TextStyle(color: Colors.grey),
