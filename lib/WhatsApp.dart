@@ -66,7 +66,7 @@ class _MyAppState extends State<MyApp> {
           appBars[i],
           style: TextStyle(
               color: const Color(0xff1CAA61),
-              fontWeight: FontWeight.bold,
+              fontWeight: FontWeight.w600,
               fontSize: 27),
         ),
         elevation: 0.2,
