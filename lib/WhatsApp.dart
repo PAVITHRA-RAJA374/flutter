@@ -477,7 +477,7 @@ class _UpdatesState extends State<Updates> {
                                     height: 10,
                                   ),
                                   Text(
-                                    "WhatsApp",
+                                    "Entertainment",
                                     style: TextStyle(fontSize: 14),
                                   ),
                                   ElevatedButton(
@@ -519,7 +519,7 @@ class _UpdatesState extends State<Updates> {
                                     height: 10,
                                   ),
                                   Text(
-                                    "WhatsApp",
+                                    "India Today",
                                     style: TextStyle(fontSize: 14),
                                   ),
                                   ElevatedButton(
