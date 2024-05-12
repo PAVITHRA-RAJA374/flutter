@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_custom_cards/flutter_custom_cards.dart';
 import 'package:flutter_material_design_icons/flutter_material_design_icons.dart'
     show MdiIcons;
@@ -187,6 +186,8 @@ class _ChatListState extends State<ChatList> {
         return TextButton(
           onPressed: () {},
           style: ButtonStyle(
+            shape: MaterialStatePropertyAll(RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10))),
             overlayColor: MaterialStatePropertyAll(
               Color.fromARGB(255, 241, 239, 239),
             ),
@@ -759,7 +760,6 @@ class _CommunitiesState extends State<Communities> {
               leading: DecoratedBox(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.all(Radius.circular(10)),
-                  //color: Color.fromARGB(255, 214, 214, 214)
                 ),
                 child: IconButton(
                   onPressed: () {},
